@@ -1,0 +1,4 @@
+cmake-build-debug/*
+.idea
+.fleet
+CMakeLists.txt.user
