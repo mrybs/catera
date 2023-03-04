@@ -47,7 +47,7 @@ private:
     if (ifile.is_open()){
       std::string line;
       while (getline(ifile, line))
-        old_text += line;
+        old_text += line + "\n";
     }
     old_text += "\n";
     ifile.close();

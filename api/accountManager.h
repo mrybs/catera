@@ -37,7 +37,7 @@ public:
       ofile.close();
     }else{
       json accounts = json::parse(file);
-      if(!accounts["account"].contains(token)){
+      if(!accounts["accounts"].contains(token)){
         accounts["accounts"].push_back(token);
       }
       std::ofstream ofile(accounts_file);
@@ -63,6 +63,34 @@ public:
       return {};
     }
     return accounts["accounts"];
+  }
+
+  accountManager removeAccountByIndex(short index){
+    std::ifstream ifile(accounts_file);
+    std::string file;
+    if (ifile.is_open()){
+      std::string line;
+      while (getline(ifile, line))
+        file += line;
+    }
+    ifile.close();
+    if(file.empty())
+      return *this;
+
+    json accounts = json::parse(file);
+    if(accounts["accounts"].size() > index)
+      accounts["accounts"].erase(index);
+    std::ofstream ofile(accounts_file);
+    ofile.write(to_string(accounts).c_str(), to_string(accounts).size());
+    ofile.close();
+    return *this;
+  }
+  accountManager removeAllAccounts(){
+      json accounts;
+      std::ofstream ofile(accounts_file);
+      ofile.write(to_string(accounts).c_str(), to_string(accounts).size());
+      ofile.close();
+      return *this;
   }
 };
 

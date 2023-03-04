@@ -1,9 +1,16 @@
-compile_flags = -lcurl
+
 output_file = catera
-cpp_files = main.cpp api/http.cpp Maths/LongInt/LongInt.hpp Maths/LongInt/Conversation.cpp Maths/LongInt/Compare.cpp Maths/LongInt/Primitive.cpp Maths/LongInt/Sum.cpp Maths/LongInt/Substraction.cpp Maths/LongInt/Multiply.cpp Maths/LongInt/Division.cpp Maths/LongInt/Pow.cpp Maths/LongInt/Factorial.cpp Maths/LongInt/Gcd.cpp Maths/LongInt/Lcm.cpp Maths/LongInt/Isqrt.cpp Maths/LongInt/Icbrt.cpp Maths/LongInt/Random.cpp
+output_directory = bin
+
 res main.cpp:
-	time g++ $(compile_flags) $(cpp_files) -o $(output_file)
+	time cmake -S . -B $(output_directory) && cd $(output_directory) && make && cd ..
 
 run:
-	g++ $(compile_flags) $(cpp_files) -o $(output_file)
-	time ./catera
+	time cmake -S . -B $(output_directory) && cd $(output_directory) && make && cd ..
+
+	# do not delete pwd command!
+	# it doesnt affect the build, but without it the programm wont start via `make run`
+	time $(output_directory)/$(output_file) && pwd > /dev/null
+
+libs:
+	time cd libs/folly && ./build.sh && cd ../..

@@ -17,14 +17,17 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS WebEngineWidgets)
 
 
 set(PROJECT_SOURCES
+        catera.qrc
         main.cpp
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        login.cpp
-        login.h
         api/http.cpp
         api/http.hpp
+        api/api.h
+        api/arg.h
+        api/accountManager.h
+        api/wall.cpp
         tools/logger.h
         Maths/LongInt/LongInt.hpp
         Maths/LongInt/Conversation.cpp

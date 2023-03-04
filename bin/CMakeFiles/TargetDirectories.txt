@@ -1,0 +1,8 @@
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/catera.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/edit_cache.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/rebuild_cache.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/list_install_components.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/install.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/install/local.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/install/strip.dir
+/home/mrybs/Data/projects/catera/bin/CMakeFiles/catera_autogen.dir
